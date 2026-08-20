@@ -1,4 +1,4 @@
-# Speak Up — Squelette technique
+# Squelette 
 
 Squelette minimal validant la communication entre un frontend React/TypeScript
 et un backend Django/DRF via une API REST.
