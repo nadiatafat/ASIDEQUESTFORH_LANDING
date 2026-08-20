@@ -1,0 +1,26 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+  font-size: 200px;
+
+}
+
+.centered-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.centered-page p {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
