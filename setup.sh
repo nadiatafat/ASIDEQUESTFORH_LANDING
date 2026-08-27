@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# setup.sh — Installation reproductible du squelette Speak Up (Linux)
+# setup.sh — Installation reproductible du projet ASQFH (Linux)
 #
 # Ce script :
 #   1. crée un environnement virtuel Python pour le backend
@@ -57,9 +57,31 @@ fi
 # shellcheck disable=SC1091
 source venv/bin/activate
 
+# Certaines distributions/versions de Python (notamment via python3-venv
+# incomplet) créent un venv sans pip fonctionnel. On s'assure qu'il est là
+# avant de continuer, et on recrée le venv si besoin plutôt que d'échouer.
+if ! python -m pip --version >/dev/null 2>&1; then
+    echo "pip absent du venv, tentative de réparation (ensurepip)..."
+    if ! python -m ensurepip --upgrade >/dev/null 2>&1; then
+        echo "ensurepip a échoué, recréation complète du venv..."
+        deactivate 2>/dev/null || true
+        rm -rf venv
+        python3 -m venv venv
+        # shellcheck disable=SC1091
+        source venv/bin/activate
+        if ! python -m ensurepip --upgrade >/dev/null 2>&1; then
+            echo "" >&2
+            echo "Erreur : impossible d'obtenir pip dans le venv." >&2
+            echo "Sur Debian/Ubuntu, installez le paquet système puis relancez :" >&2
+            echo "  sudo apt install python3-venv python3-pip" >&2
+            exit 1
+        fi
+    fi
+fi
+
 log "Backend : installation des dépendances (requirements.txt)"
-pip install --upgrade pip --quiet
-pip install -r requirements.txt --quiet
+python -m pip install --upgrade pip --quiet
+python -m pip install -r requirements.txt --quiet
 echo "Dépendances backend installées."
 
 log "Backend : application des migrations de base de données"

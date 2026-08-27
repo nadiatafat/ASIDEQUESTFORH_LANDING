@@ -32,7 +32,7 @@ export function isQuestComplete(answers: QuestAnswers): boolean {
   );
 }
 
-export const QUEST_COMPLETED_STORAGE_KEY = "speakup:quest-completed";
+export const QUEST_COMPLETED_STORAGE_KEY = "asqfh:quest-completed";
 
 export function hasCompletedQuest(): boolean {
   return localStorage.getItem(QUEST_COMPLETED_STORAGE_KEY) === "true";

@@ -1,4 +1,4 @@
-# Squelette 
+# ASQFH — Squelette technique
 
 Squelette minimal validant la communication entre un frontend React/TypeScript
 et un backend Django/DRF via une API REST.
@@ -18,10 +18,13 @@ project/
 
 ## Parcours actuel
 
-1. **`/`** — Le "Side Quest" : un petit parcours ludique obligatoire (texte
-   libre, couleur préférée, mot à compléter, nombre préféré via un clavier,
-   deux choix de consentement). Il envoie les réponses au backend puis
-   affiche un écran "Welcome".
+1. **`/`** — Le "Side Quest" : un parcours ludique obligatoire, une question
+   par écran (texte libre, couleur préférée, mot à compléter, nombre
+   préféré via une calculatrice fonctionnelle, deux choix de consentement),
+   avec un bouton "Continuer" fixé en bas à droite. Il envoie les réponses
+   au backend puis affiche un écran "Welcome".
+   - La calculatrice du "favorite number" calcule réellement (`+`, `-`,
+     `x`, `=`), comme une calculatrice classique.
 2. **`/home`** — La page actuelle (message "Hello, Speak Up 👋" récupéré
    depuis l'API), accessible uniquement après avoir complété le Side Quest.
    Le passage est mémorisé en `localStorage` : il n'est demandé qu'une fois

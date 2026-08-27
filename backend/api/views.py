@@ -9,7 +9,7 @@ from .serializers import QuestResponseSerializer
 @api_view(["GET"])
 def hello(request):
     """Endpoint minimal utilisé pour valider la communication front/back."""
-    return Response({"message": "A SIDE QUEST FOR HUMANITY"})
+    return Response({"message": "Hello, Speak Up 👋"})
 
 
 class QuestResponseCreateView(generics.CreateAPIView):
