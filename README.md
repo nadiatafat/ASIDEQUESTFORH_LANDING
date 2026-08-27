@@ -16,6 +16,22 @@ project/
 └── README.md
 ```
 
+## Parcours actuel
+
+1. **`/`** — Le "Side Quest" : un petit parcours ludique obligatoire (texte
+   libre, couleur préférée, mot à compléter, nombre préféré via un clavier,
+   deux choix de consentement). Il envoie les réponses au backend puis
+   affiche un écran "Welcome".
+2. **`/home`** — La page actuelle (message "Hello, Speak Up 👋" récupéré
+   depuis l'API), accessible uniquement après avoir complété le Side Quest.
+   Le passage est mémorisé en `localStorage` : il n'est demandé qu'une fois
+   par navigateur.
+
+Endpoint backend dédié : `POST /api/quest-responses/`. Si la personne répond
+NON à "Can we keep the data for you?", ses réponses personnelles (texte,
+couleur, mot, nombre) sont vidées avant sauvegarde ; seuls les deux choix de
+consentement et l'horodatage sont conservés.
+
 ## Prérequis
 
 - Python 3.10+ (avec `python3-venv`)

@@ -62,6 +62,10 @@ pip install --upgrade pip --quiet
 pip install -r requirements.txt --quiet
 echo "Dépendances backend installées."
 
+log "Backend : application des migrations de base de données"
+python manage.py migrate
+echo "Migrations appliquées."
+
 # --------------------------------------------------------------------------
 # 3. Frontend : dépendances npm
 # --------------------------------------------------------------------------

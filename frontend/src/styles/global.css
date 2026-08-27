@@ -7,10 +7,7 @@ body,
 
 body {
   background-color: #ffffff;
-  font-family: 'DM Mono', monospace;
-  letter-spacing: 0.08em;
-  font-size: 200px;
-
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .centered-page {
@@ -23,4 +20,193 @@ body {
 .centered-page p {
   font-size: 1.5rem;
   color: #1a1a1a;
+}
+
+/* --------------------------------------------------------------------- */
+/* Side Quest                                                             */
+/* --------------------------------------------------------------------- */
+
+:root {
+  --quest-cream: #f2ede4;
+  --quest-charcoal: #1f1f1f;
+  --quest-dark-green: #16281f;
+  --quest-yes: #b7d9b1;
+  --quest-no: #e8b4ae;
+}
+
+.quest-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 5rem;
+  color: var(--quest-charcoal);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.quest-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd6c8;
+  margin-bottom: 3rem;
+}
+
+.quest-title {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.quest-marks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: #a39d8f;
+  margin-bottom: 5rem;
+}
+
+.quest-question {
+  margin-bottom: 4rem;
+}
+
+.quest-question__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.quest-question__input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.quest-question__suffix {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.quest-input {
+  flex: 1;
+  border: 1px solid #cfc7b5;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  background: var(--quest-cream);
+  font-size: 0.95rem;
+  color: var(--quest-charcoal);
+}
+
+.quest-input:focus {
+  outline: 2px solid var(--quest-dark-green);
+}
+
+.quest-keypad__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  max-width: 320px;
+  margin-bottom: 0.75rem;
+}
+
+.quest-keypad__key {
+  border: 1px solid #cfc7b5;
+  border-radius: 999px;
+  padding: 0.5rem;
+  background: var(--quest-cream);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.quest-keypad__key:hover {
+  background: #e9e2d2;
+}
+
+.quest-keypad__else-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.quest-keypad__key--else {
+  white-space: nowrap;
+}
+
+.quest-consent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+.quest-consent__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quest-pill {
+  border: none;
+  border-radius: 999px;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.quest-pill--yes {
+  background: var(--quest-yes);
+}
+
+.quest-pill--no {
+  background: var(--quest-no);
+}
+
+.quest-pill--active {
+  opacity: 1;
+}
+
+.quest-submit {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.quest-button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  background: var(--quest-dark-green);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.quest-button:disabled {
+  background: #9aa89f;
+  cursor: not-allowed;
+}
+
+.quest-error {
+  color: #b3261e;
+  margin-top: 1rem;
+}
+
+.quest-welcome {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: var(--quest-cream);
+}
+
+.quest-welcome__text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 4rem;
+  color: #d8d0bd;
 }

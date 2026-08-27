@@ -1,10 +1,15 @@
-import { HelloMessage } from "./features/hello/HelloMessage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HomeGate } from "./features/home/HomeGate";
+import { QuestGate } from "./features/quest/QuestGate";
 
 function App() {
   return (
-    <div className="centered-page">
-      <HelloMessage />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<QuestGate />} />
+        <Route path="/home" element={<HomeGate />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
